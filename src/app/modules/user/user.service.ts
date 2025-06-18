@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 
 const prisma = new PrismaClient()
 const createAdminDb = async (data: any) =>{
+    console.log(data)
     const hashedPassword = await bcrypt.hash(data.password, 10)
     const userData = {
         email: data.admin.email,
